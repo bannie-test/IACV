@@ -1,11 +1,13 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   color: #2d2d2d;
   background: #f0f0f0;
@@ -29,7 +31,7 @@ body {
   border: none;
   border-radius: 4px;
   font-size: 13px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   cursor: pointer;
   transition: background 0.15s;
 }
@@ -101,10 +103,11 @@ body {
 }
 
 .avatar-wrap img {
-  width: 100%;
+  width: 152%;
   height: auto;
   display: block;
-  margin-top: -15%;
+  margin-top: -1%;
+  margin-left: -14px;
 }
 
 .avatar-overlay {
@@ -275,7 +278,7 @@ body {
 }
 
 .resp-list li::before {
-  content: '•';
+  content: "•";
   position: absolute;
   left: 0;
   color: #2e74c0;
@@ -342,7 +345,7 @@ body {
   background: transparent;
   color: #2e74c0;
   font-size: 11px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   cursor: pointer;
   opacity: 0.35;
   transition: opacity 0.15s;
