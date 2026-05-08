@@ -6,7 +6,7 @@
       <DeleteButton @click="$emit('delete')" />
     </div>
 
-    <div class="project-meta">
+    <div v-if="project.team || project.client || project.tools" class="project-meta">
       <span>Team:&nbsp;<EditableField v-model="project.team" /></span>
       <span class="project-meta-sep">&nbsp;|&nbsp;</span>
       <span>Client:&nbsp;<EditableField v-model="project.client" /></span>
