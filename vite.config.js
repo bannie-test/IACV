@@ -8,5 +8,5 @@ const base = !rawBase || rawBase === '/' ? '/' : `${rawBase}/`
 
 export default defineConfig({
   plugins: [vue()],
-  base: '/',
+  base: 'https://bannie-test.github.io/IACV/',
 })
