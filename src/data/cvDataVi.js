@@ -1,7 +1,7 @@
 export function viData(uid) {
   return {
     name: 'NGUYỄN THỊ NGỌC ÁNH',
-    title: 'Kiểm Thử Thủ Công | Cấp Độ Middle',
+    title: 'Manual Tester | Middle',
 
     sectionTitles: {
       summary: 'Giới Thiệu Bản Thân',
@@ -18,10 +18,10 @@ export function viData(uid) {
     ],
 
     summary:
-      'Manual Tester cấp độ Middle với hơn 3 năm kinh nghiệm thực hiện SIT, UAT và Regression Test trong các dự án Agile Scrum. Có kinh nghiệm làm việc trực tiếp với khách hàng trong nước và quốc tế trong các nhóm từ 12 đến 40 thành viên. Thành thạo quản lý toàn bộ chu trình kiểm thử — từ phân tích yêu cầu, thiết kế test case đến theo dõi lỗi, báo cáo kết quả và chuyển giao kiến thức. Có kinh nghiệm thực tế về kiểm tra cơ sở dữ liệu (DBeaver, SSMS, MySQL Workbench), kiểm thử API (Postman, Swagger) và kiểm thử giao diện (Figma, DevTools).',
+      'Middle Manual Tester với hơn 3 năm kinh nghiệm thực hiện SIT, UAT và Regression Test trong các dự án Agile Scrum. Có kinh nghiệm làm việc trực tiếp với khách hàng trong nước và quốc tế trong các nhóm từ 12 đến 40 thành viên. Thành thạo quản lý toàn bộ chu trình kiểm thử — từ phân tích yêu cầu, thiết kế test case đến theo dõi lỗi, báo cáo kết quả và chuyển giao kiến thức. Có kinh nghiệm thực tế về kiểm tra cơ sở dữ liệu (DBeaver, SSMS, MySQL Workbench), kiểm thử API (Postman, Swagger) và kiểm thử giao diện (Figma, DevTools).',
 
     skills: [
-      { id: uid(), label: 'Loại Kiểm Thử', value: 'Kiểm thử chức năng, Kiểm thử tích hợp hệ thống (SIT), UAT, Regression Testing, Smoke Testing, Kiểm thử API, Kiểm thử UI/UX' },
+      { id: uid(), label: 'Kiểm Thử', value: 'Kiểm thử chức năng, Kiểm thử tích hợp hệ thống (SIT), UAT, Regression Testing, Smoke Testing, Kiểm thử API, Kiểm thử UI/UX' },
       { id: uid(), label: 'Hoạt Động Kiểm Thử', value: 'Test Plan, Thiết kế Test Case, Chuẩn bị dữ liệu kiểm thử, Báo cáo lỗi, Báo cáo kết quả Sprint, Tài liệu chuyển giao kiến thức' },
       { id: uid(), label: 'Công Cụ Quản Lý Kiểm Thử', value: 'Azure DevOps, Jira, Backlog, Redmine' },
       { id: uid(), label: 'Công Cụ API & Cơ Sở Dữ Liệu', value: 'Postman, Swagger, DBeaver, SSMS, MySQL Workbench' },
