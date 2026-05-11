@@ -18,6 +18,7 @@
     </div>
 
     <div
+      v-if="useProfileImage"
       class="avatar-wrap"
       title="Click to change photo"
       @click="fileInput.click()"
@@ -29,6 +30,12 @@
       />
       <div class="avatar-overlay no-print">📷</div>
     </div>
+    <button
+      class="toolbar-btn no-print"
+      @click="useProfileImage = !useProfileImage"
+    >
+      Image
+    </button>
     <input
       ref="fileInput"
       type="file"
@@ -48,6 +55,7 @@ import AddButton from "./AddButton.vue";
 
 const cv = useCvData();
 const fileInput = ref(null);
+const useProfileImage = ref(false);
 
 function handleUpload(e) {
   const file = e.target.files[0];
