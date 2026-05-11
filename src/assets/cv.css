@@ -329,6 +329,7 @@ body {
   flex-shrink: 0;
   padding: 0;
   vertical-align: middle;
+  margin-left: 6px;
 }
 
 .delete-btn:hover {

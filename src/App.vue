@@ -33,7 +33,7 @@ function print() {
 }
 </script>
 
-<style scoped>
+<style>
 .lang-toggle {
   display: flex;
   border: 1px solid #2e74c0;
