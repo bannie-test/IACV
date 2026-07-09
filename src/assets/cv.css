@@ -336,6 +336,31 @@ body {
   background: #c0392b;
 }
 
+.dup-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: none;
+  background: #6c757d;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+  padding: 0;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.dup-btn:hover {
+  background: #495057;
+}
+
 .add-btn {
   display: inline-flex;
   align-items: center;
@@ -366,9 +391,19 @@ body {
 .skill-row:hover .delete-btn,
 .job:hover .delete-btn,
 .project:hover > .project-header .delete-btn,
+.section > div:hover .delete-btn,
 .resp-list li:hover .delete-btn,
 .edu-item:hover .delete-btn,
 .contact-item:hover .delete-btn {
+  opacity: 1;
+}
+
+.skill-row:hover .dup-btn,
+.job:hover .dup-btn,
+.project:hover > .project-header .dup-btn,
+.resp-list li:hover .dup-btn,
+.edu-item:hover .dup-btn,
+.contact-item:hover .dup-btn {
   opacity: 1;
 }
 
@@ -388,6 +423,7 @@ body {
   .no-print,
   .toolbar,
   .delete-btn,
+  .dup-btn,
   .add-btn {
     display: none !important;
   }
