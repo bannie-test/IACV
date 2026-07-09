@@ -361,6 +361,27 @@ body {
   background: #495057;
 }
 
+.group-layout-controls {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.group-layout-controls button {
+  border: 1px solid #2e74c0;
+  background: transparent;
+  color: #2e74c0;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.group-layout-controls button.active,
+.group-layout-controls button:hover {
+  background: #2e74c0;
+  color: #fff;
+}
+
 .add-btn {
   display: inline-flex;
   align-items: center;
@@ -401,6 +422,7 @@ body {
 .skill-row:hover .dup-btn,
 .job:hover .dup-btn,
 .project:hover > .project-header .dup-btn,
+.section > div:hover .dup-btn,
 .resp-list li:hover .dup-btn,
 .edu-item:hover .dup-btn,
 .contact-item:hover .dup-btn {
@@ -424,7 +446,8 @@ body {
   .toolbar,
   .delete-btn,
   .dup-btn,
-  .add-btn {
+  .add-btn,
+  .group-layout-controls {
     display: none !important;
   }
 
