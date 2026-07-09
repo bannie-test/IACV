@@ -11,13 +11,32 @@ const cv = reactive({
 });
 // Backwards-compatible: if data only provides `skills`, expose `skillGroups`
 if (!cv.skillGroups) {
+  const initialSkills = Array.isArray(cv.skills)
+    ? cv.skills.map((s) => ({ ...s }))
+    : [];
   cv.skillGroups = [
     {
       id: uid(),
       title: cv.sectionTitles?.skills || "Skills",
-      skills: Array.isArray(cv.skills) ? cv.skills.map((s) => ({ ...s })) : [],
+      defaultTitle: cv.sectionTitles?.skills || "Skills",
+      layout: "grid",
+      skills: initialSkills,
+      defaultSkillItems: initialSkills.map((s) => ({
+        label: s.label,
+        value: s.value,
+      })),
     },
   ];
+} else {
+  cv.skillGroups.forEach((group) => {
+    if (!("layout" in group)) group.layout = "grid";
+    if (!("defaultTitle" in group)) group.defaultTitle = group.title;
+    if (!("defaultSkillItems" in group)) {
+      group.defaultSkillItems = Array.isArray(group.skills)
+        ? group.skills.map((s) => ({ label: s.label, value: s.value }))
+        : [];
+    }
+  });
 }
 
 export function useCvData() {

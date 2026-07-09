@@ -23,6 +23,22 @@
     >
       <div style="display: flex; align-items: center; gap: 8px">
         <EditableField v-model="group.title" tag="div" class="section-title" />
+        <div class="group-layout-controls">
+          <button
+            :class="{ active: group.layout === 'grid' }"
+            @click="setGroupLayout(group.id, 'grid')"
+            type="button"
+          >
+            Grid
+          </button>
+          <button
+            :class="{ active: group.layout === 'row' }"
+            @click="setGroupLayout(group.id, 'row')"
+            type="button"
+          >
+            Row
+          </button>
+        </div>
         <button
           class="dup-btn"
           title="Duplicate Section"
@@ -42,7 +58,7 @@
           @dragover.prevent
           @drop="dropSkill(gIndex, sIndex)"
         >
-          <span v-if="layout === 'grid'" class="skill-row">
+          <span v-if="group.layout === 'grid'" class="skill-row">
             <span class="skill-label"
               ><EditableField v-model="skill.label"
             /></span>
@@ -100,7 +116,10 @@ function addGroup() {
   cv.skillGroups.push({
     id: uid(),
     title: cv.sectionTitles.skills || "Skills",
+    defaultTitle: cv.sectionTitles.skills || "Skills",
+    layout: layout.value,
     skills: [],
+    defaultSkillItems: [],
   });
 }
 
@@ -143,11 +162,23 @@ function duplicateGroup(id) {
   const copy = JSON.parse(JSON.stringify(src));
   copy.id = uid();
   copy.skills = copy.skills.map((s) => ({ ...s, id: uid() }));
+  if (Array.isArray(src.defaultSkillItems)) {
+    copy.defaultSkillItems = src.defaultSkillItems.map((s) => ({ ...s }));
+  }
   cv.skillGroups.splice(idx + 1, 0, copy);
+}
+
+function setGroupLayout(groupId, layoutName) {
+  const g = cv.skillGroups.find((gr) => gr.id === groupId);
+  if (!g) return;
+  g.layout = layoutName;
 }
 
 function setLayout(name) {
   layout.value = name;
+  cv.skillGroups.forEach((g) => {
+    g.layout = name;
+  });
 }
 
 function dragStartGroup(index) {
@@ -192,4 +223,3 @@ function dropSkill(targetG, targetS) {
   skillDrag.value = null;
 }
 </script>
-const src = cv.skillGroups[idx];
